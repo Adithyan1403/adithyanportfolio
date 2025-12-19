@@ -1,3 +1,4 @@
+
 *
 {
 margin: 0;
@@ -542,7 +543,7 @@ animation-delay: calc(.2s * var(--i));
 }
 .contact{
     display: grid;
-    grid-template-columns: repeat (2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 3rem;
     padding-left: 30px;
@@ -664,7 +665,7 @@ animation-delay: calc(.2s * var(--i));
 .top{
     position: fixed;
     bottom: 2.1rem;
-    right: 2,1rem;
+    right: 2.1rem;
 }
 .top i {
     color: #000;
@@ -714,3 +715,129 @@ animation-delay: calc(.2s * var(--i));
             opacity: 1;
         }
     }
+    /* Responsive design for tablets */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header {
+    padding: 10px;
+  }
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header {
+    padding: 10px;
+  }
+  .contact {
+    grid-template-columns: 1fr;   /* stack into one column */
+    padding-left: 10px;
+    margin-top: 60px;
+  }
+  .contact-text h2 {
+    font-size: 40px;              /* smaller heading */
+  }
+  .contact-text p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* ==========================================
+   MOBILE & TABLET VIEW OVERRIDES 
+   (Only triggers on screens smaller than 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Header & Navigation */
+    .header {
+        padding: 20px 5%; /* Reduces side spacing */
+    }
+    .navbar a {
+        font-size: 16px; /* Smaller font for mobile menu */
+        margin-left: 15px;
+    }
+
+    /* 2. Home Section */
+    .home {
+        padding: 0 5%;
+        background-position: left; /* Ensures your face/image is visible */
+    }
+    .home-content h1 {
+        font-size: 35px; /* Shorter text so it doesn't overlap */
+    }
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    /* 3. About Section */
+    .About {
+        grid-template-columns: 1fr; /* Stacks image on top of text */
+        padding: 50px 5%;
+        text-align: center;
+    }
+    .About-img img {
+        width: 80%; /* Makes image fit the phone screen width */
+        margin: 0 auto;
+    }
+    .About-text h2 {
+        font-size: 40px;
+    }
+
+    /* 4. Services & Portfolio */
+    .container {
+        padding: 20px;
+    }
+    .sub-title {
+        font-size: 35px;
+        padding-bottom: 30px;
+    }
+    .services-list {
+        grid-template-columns: 1fr; /* One service per row on mobile */
+    }
+    .portfolio-content {
+        grid-template-columns: 1fr; /* One project per row on mobile */
+    }
+
+    /* 5. Skills Section (CRITICAL FIX) */
+    .container1 {
+        width: 100%; /* Overrides your 600px fixed width */
+        margin-left: 0;
+        padding: 30px 20px;
+        height: auto; /* Allows section to grow with content */
+    }
+    .radial-bars .radial-bar {
+        width: 100%; /* Stacks the circles */
+    }
+
+    /* 6. Contact Section */
+    .contact {
+        grid-template-columns: 1fr; /* Stacks contact info on top of form */
+        padding: 20px;
+    }
+    .contact-text h2 {
+        font-size: 45px;
+    }
+    .contact-form form input, .contact-form form textarea {
+        width: 100%; /* Makes form fields full width */
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap; /* Wraps menu items so they don't go off screen */
+        justify-content: center;
+    }
+    .navbar a {
+        font-size: 14px;
+        margin: 5px;
+    }
+}
